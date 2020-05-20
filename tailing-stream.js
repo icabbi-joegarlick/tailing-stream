@@ -217,6 +217,7 @@ TailingReadableStream.prototype._destroy = function () {
 
   // close any existing read stream
   if (this._stream) {
+    this._stream.close();
     this._stream.destroy();
     this._stream = null;
   }
